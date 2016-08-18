@@ -36,15 +36,21 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Analisis',
+            ['label' => 'Analisis Stakeholder',
                 'items' => [
-                    ['label' => 'Analisis Stakeholder','url' => ['/stakeholder/index']],
+                    ['label' => 'Grafik','url' => ['/grafik/index']],
                     '<li class="divider"></li>',  
-                    ['label' => 'x','url' => ['/site/home']],
-                    '<li class="divider"></li>',
-                    ['label' => 'y','url' => ['/site/home']],
-                    '<li class="divider"></li>',
-                    ['label' => 'z','url' => ['/site/home']],
+                    ['label' => 'List Stakeholder','url' => ['/stakeholder/index']],
+                    // '<li class="divider"></li>',  
+                    ['label' => 'List Faktor','url' => ['/faktor/index']],
+                    // '<li class="divider"></li>',
+                    ['label' => 'Bobot Influence','url' => ['/influencebobot/index']],
+                    // '<li class="divider"></li>',
+                    ['label' => 'Bobot Interest','url' => ['/interestbobot/index']],
+                    // '<li class="divider"></li>',
+                    ['label' => 'Influence','url' => ['/influence/index']],
+                    // '<li class="divider"></li>',
+                    ['label' => 'Interest','url' => ['/interest/index']],
                 ]   
             ],
             ['label' => 'About', 'url' => ['/site/about']],

@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Ordinat;
+use app\models\Stakeholder;
 
 /**
- * OrdinatSearch represents the model behind the search form about `app\models\Ordinat`.
+ * StakeholderSearch represents the model behind the search form about `app\models\Stakeholder`.
  */
-class OrdinatSearch extends Ordinat
+class StakeholderSearch extends Stakeholder
 {
     /**
      * @inheritdoc
@@ -19,8 +19,7 @@ class OrdinatSearch extends Ordinat
     {
         return [
             [['id'], 'integer'],
-            [['nama'], 'safe'],
-            [['interest', 'influence'], 'number'],
+            [['nama', 'instansi', 'grup'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class OrdinatSearch extends Ordinat
      */
     public function search($params)
     {
-        $query = Ordinat::find();
+        $query = Stakeholder::find();
 
         // add conditions that should always apply here
 
@@ -61,11 +60,11 @@ class OrdinatSearch extends Ordinat
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'interest' => $this->interest,
-            'influence' => $this->influence,
         ]);
 
-        $query->andFilterWhere(['like', 'nama', $this->nama]);
+        $query->andFilterWhere(['like', 'nama', $this->nama])
+            ->andFilterWhere(['like', 'instansi', $this->instansi])
+            ->andFilterWhere(['like', 'grup', $this->grup]);
 
         return $dataProvider;
     }

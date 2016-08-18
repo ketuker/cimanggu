@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f1f790c7c3ad2b048d69a0a2a40d68f",
-    "content-hash": "8ec6e570dd180a5936466505b8e4c26a",
+    "hash": "7e97a1769ccfc41da87a5721b57fa9d0",
+    "content-hash": "ab23be6ce8d0b2904d955a4fb66cc1df",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -809,6 +809,34 @@
                     "Gruntfile.js",
                     "node_modules",
                     "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/select2",
+            "version": "3.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/select2/select2.git",
+                "reference": "95a977f674b6938af55ec5f28b7772df93786c5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/select2/select2/zipball/95a977f674b6938af55ec5f28b7772df93786c5c",
+                "reference": "95a977f674b6938af55ec5f28b7772df93786c5c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "select2.js",
+                    "select2.css",
+                    "select2.png",
+                    "select2x2.png",
+                    "select2-spinner.gif"
                 ]
             }
         },
@@ -2415,16 +2443,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-select2",
-            "version": "v2.0.8",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69"
+                "reference": "39f98b178c75189ce0c781f96eef3ee356e73964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/39f98b178c75189ce0c781f96eef3ee356e73964",
+                "reference": "39f98b178c75189ce0c781f96eef3ee356e73964",
                 "shasum": ""
             },
             "require": {
@@ -2464,7 +2492,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-17 11:49:30"
+            "time": "2016-08-07 04:51:06"
         },
         {
             "name": "kartik-v/yii2-widget-sidenav",
@@ -3435,6 +3463,68 @@
             "time": "2015-04-30 07:23:23"
         },
         {
+            "name": "vova07/yii2-select2-widget",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vova07/yii2-select2-widget.git",
+                "reference": "8b1a0907c24caf7471bdb5f6946f04a5920a1176"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vova07/yii2-select2-widget/zipball/8b1a0907c24caf7471bdb5f6946f04a5920a1176",
+                "reference": "8b1a0907c24caf7471bdb5f6946f04a5920a1176",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/select2": "3.*",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.0.x-dev"
+                },
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "vova07\\select2\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Crudu Vasile",
+                    "email": "bazillio07@yandex.ru",
+                    "homepage": "https://github.com/vova07",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The select2 widget for Yii framework.",
+            "homepage": "https://github.com/vova07/yii2-select2-widget",
+            "keywords": [
+                "extension",
+                "select",
+                "select 2",
+                "select2",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2015-04-05 21:07:23"
+        },
+        {
             "name": "webcreate/jquery-ias",
             "version": "v2.2.1",
             "source": {
@@ -4128,6 +4218,7 @@
         "kop/yii2-scroll-pager": 20,
         "dektrium/yii2-user": 20,
         "kartik-v/yii2-widget-activeform": 20,
+        "kartik-v/yii2-widget-select2": 20,
         "kartik-v/yii2-mpdf": 20,
         "kartik-v/yii2-krajee-base": 20,
         "kartik-v/yii2-editable": 20,

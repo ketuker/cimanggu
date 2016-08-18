@@ -3,16 +3,18 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Stakeholder;
-use app\models\StakeholderSearch;
+use app\models\Faktor;
+use app\models\Influencebobot;
+use app\models\InfluencebobotSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
- * StakeholderController implements the CRUD actions for Stakeholder model.
+ * InfluencebobotController implements the CRUD actions for Influencebobot model.
  */
-class StakeholderController extends Controller
+class InfluencebobotController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +32,12 @@ class StakeholderController extends Controller
     }
 
     /**
-     * Lists all Stakeholder models.
+     * Lists all Influencebobot models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new StakeholderSearch();
+        $searchModel = new InfluencebobotSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +47,7 @@ class StakeholderController extends Controller
     }
 
     /**
-     * Displays a single Stakeholder model.
+     * Displays a single Influencebobot model.
      * @param string $id
      * @return mixed
      */
@@ -57,25 +59,30 @@ class StakeholderController extends Controller
     }
 
     /**
-     * Creates a new Stakeholder model.
+     * Creates a new Influencebobot model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Stakeholder();
+        $model = new Influencebobot();
+
+
+        $f = Faktor::find()->all();
+        $listDataF=ArrayHelper::map($f,'id','faktor');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'listDataF' => $listDataF,
             ]);
         }
     }
 
     /**
-     * Updates an existing Stakeholder model.
+     * Updates an existing Influencebobot model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -84,17 +91,21 @@ class StakeholderController extends Controller
     {
         $model = $this->findModel($id);
 
+        $f = Faktor::find()->all();
+        $listDataF=ArrayHelper::map($f,'id','faktor');
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('create', [
                 'model' => $model,
+                'listDataF' => $listDataF,
             ]);
         }
     }
 
     /**
-     * Deletes an existing Stakeholder model.
+     * Deletes an existing Influencebobot model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -107,15 +118,15 @@ class StakeholderController extends Controller
     }
 
     /**
-     * Finds the Stakeholder model based on its primary key value.
+     * Finds the Influencebobot model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return Stakeholder the loaded model
+     * @return Influencebobot the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Stakeholder::findOne($id)) !== null) {
+        if (($model = Influencebobot::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
