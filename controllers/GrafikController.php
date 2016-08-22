@@ -60,7 +60,7 @@ class GrafikController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('grafik');
     }
 
     /**
